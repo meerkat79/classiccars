@@ -23,8 +23,10 @@
 		<div ng-hide="showroom.products.soldOut">
 			<div ng-repeat="car in showroom.cars">
 				<h1>{{car.name}}</h1>
-				<h2>${{car.price}}</h2>
+				<h2>{{car.price | currency }}</h2>
 				<p>{{car.description}}</p>
+				<img ng-src="car.images[0].full" />
+				<hr>
 			</div>
 
 
