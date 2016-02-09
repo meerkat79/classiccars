@@ -1,0 +1,15 @@
+body{
+	font-family: verdana, sans-serif;
+}
+
+.box{
+	width: 100%;
+	text-align: center;
+}
+
+.box h1{
+	height: 3em;
+	line-height: 3em;
+	background-color: black;
+	color: #ffffff;
+}
