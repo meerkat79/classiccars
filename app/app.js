@@ -14,7 +14,6 @@
 
 	app.controller('ShowroomController', function(){
 
-<<<<<<< HEAD
 		this.cars = cars;
 	});
 
@@ -216,7 +215,7 @@
 
 			this.review = {};
 		};
-=======
+
 		var cars = [
 		{
 			name: 'Ferrari',
@@ -267,8 +266,6 @@
 
 		this.cars = cars;
 		console.info(cars);
-
->>>>>>> 1fa4cd7a6afa6554dfd265f94afd39aefc7fa2c9
 	});
 	
 })();
