@@ -11,6 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+<<<<<<< HEAD
 </head>
 
 <body>
@@ -107,5 +108,34 @@
 	<script type="text/javascript" src="app/app.js"></script>
 	<script type="text/javascript" src="app/modules/main.ctrl.js"></script>
 	<!-- <script type="text/javascript" src="app/modules/summary/main.dir.js"></script>	 -->
+=======
+
+	<script type="text/javascript" src="lib/angular/angular.min.js"></script>
+		<script type="text/javascript" src="app/app.js"></script>
+	<script type="text/javascript" src="app/modules/main.ctrl.js"></script>
+
+</head>
+<body ng-controller="ShowroomController as showroom">
+	<div class="container">
+		<div class="box">
+			<h1>Classic Car Heaven</h1>
+			<p>An angular sandbox</p>
+			<p>I am {{4+6}}</p>
+		</div>
+
+		<div ng-hide="showroom.products.soldOut">
+			<div ng-repeat="car in showroom.cars">
+				<h1>{{car.name}}</h1>
+				<h2>{{car.price | currency }}</h2>
+				<p>{{car.description}}</p>
+				<img ng-src="car.images[0].full" />
+				<hr>
+			</div>
+
+
+			<button ng-show="showroom.products.canPurchase">Purchase</button>
+		</div>
+	</div>
+>>>>>>> 1fa4cd7a6afa6554dfd265f94afd39aefc7fa2c9
 </body>
 </html>
