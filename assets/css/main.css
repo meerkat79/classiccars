@@ -1,15 +1,108 @@
-body{
+header,body{
 	font-family: verdana, sans-serif;
 }
 
-.box{
-	width: 100%;
+header{
+	height: 11em;
 	text-align: center;
+	background: url('../img/banner.jpg') no-repeat;
+	background-size: 100%;
 }
 
-.box h1{
+header h1{
+	line-height: 3.5em;
+	color: #C9200F; /* red color*/
+	font-style: italic;
+	font-weight: 700;
+	font-size: 3em;
+}
+
+section{
+	margin: 1% 0;
+}
+
+section li.active{
+	background-color: #C9200F;
+	color: #ffffff;
+}
+
+section li.active a{
+	color: #ffffff;
+	text-decoration: none;
+}
+
+form[name="reviewForm"]{
+	padding: 1%;
+	background-color: #A3A3A1;
+}
+form[name="reviewForm"] select, textarea, label, input, button{
+	vertical-align: top;
+}
+form[name="reviewForm"] textarea{
+	width: 20em;
+	min-height: 10em;
+}
+
+button{
+    width: 7em;
+    height: 2em;
+    font-weight: bold;
+    color: #337ab7;	
+}
+
+.box{
+	text-align: left;
+}
+
+.box em{
+	display: block;
+	text-align: right;
+}
+
+.box button{
+    display: inline-block;
+    float: right;
+    margin: 1% 0;	
+}
+
+.container > h2 {
+	width: 80%;
 	height: 3em;
 	line-height: 3em;
-	background-color: black;
-	color: #ffffff;
+	margin: 0.5em auto;
+	font-size: 2em;
+    border-radius: 30px 0;
+	background-color: #A3A3A1; /* gray background color*/
+	text-align: center;
+	color: #C9200F;	/* red */
+}
+
+.tab-panel li{
+	display: inline-block;
+    width: 11em;
+    height: 2em;
+    text-align: center;
+    line-height: 2em;
+}
+
+.panel{
+	height: 10em;
+    padding: 1%;
+    border-radius: 0;
+    overflow-y: scroll;
+    background-color: #C9200F; /*red*/
+    color: #ffffff;
+}
+
+.ng-invalid, .ng-dirty{
+	border-color: #C9200F; /*red*/
+	outline: none;
+}
+
+.ng-invalid, .ng-dirty:active{
+	border-color: #C9200F; /*red*/
+}
+
+.ng-valid {
+	border-color: #3C763D; /*green*/
 }
