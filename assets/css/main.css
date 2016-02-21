@@ -50,6 +50,12 @@ button{
     color: #337ab7;	
 }
 
+.summary{
+    font-size: 2em;
+    color: #C9200F;
+    text-align: center;	
+}
+
 .box{
 	text-align: left;
 }

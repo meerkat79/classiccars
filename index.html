@@ -27,92 +27,29 @@
 		<div class="row">
 			<div class=" col-lg-12 box" ng-repeat="car in showroom.cars | orderBy:'-price'">
 
-			<summary-details></summary-details>
+			<summary-details class="summary"></summary-details>
 
-				<img ng-src="assets/img/cars/{{car.images[0].thumb}}">
+			<img ng-src="assets/img/cars/{{car.images[0].thumb}}">
 
-				<button type="button" ng-show="car.canPurchase">Purchase</button>
+			<button type="button" ng-show="car.canPurchase">Purchase</button>
 
-				<section class="tab-panel" ng-controller="PanelController as panel">
-					<ul>
-						<li ng-class="{ active: panel.isSelected(1) }">
-							<a href ng-click="panel.selectTab(1)">Description</a>
-						</li>
-						<li ng-class="{ active: panel.isSelected(2)  }">
-							<a href ng-click="panel.selectTab(2)">Specifications</a>
-						</li>
-						<li ng-class="{ active: panel.isSelected(3) }">
-							<a href ng-click="panel.selectTab(3)">Your views</a>
-						</li>										
-					</ul>
-					<div class="panel" ng-show="panel.isSelected(1)">
-						
-						<p>{{car.description}}</p>
-						
-					</div>
-					<div class="panel" ng-show="panel.isSelected(2)">
-						
-						<p>{{car.specification}}</p>
-						
-					</div>
-					<div class="panel" ng-show="panel.isSelected(3)">
-						<blockquote ng-repeat="review in car.reviews">
-							<p><span>Rating</span> {{review.stars}} </p>
-							<p>{{review.msg}}</p>
-							<p>{{review.author}}</p>
-							<hr>
-						</blockquote>
-
-					</div>
-					<form name="reviewForm" ng-controller="ReviewController as reviewCtrl" 
-					ng-submit="reviewForm.$valid && reviewCtrl.addReview(car)" novalidate>
-						<h2>Submit a review</h2>
-						</br>
-						<h3>Preview</h3>
-						<blockquote>
-							<b>Stars: {{reviewCtrl.review.stars}}</b>
-							<p>Write-up:{{reviewCtrl.review.msg}}</p>
-							<cite>by:{{reviewCtrl.review.author}}</cite>
-						</blockquote>
-						<hr>
-						<h3>Please enter review information below</h3>
-						</br>
-
-						<div class="row">
-							<div class="col-lg-12">
-							<p>Car out of 5, where 5 is best rating</p>
-								<select ng-model="reviewCtrl.review.stars" required>
-									<option>1 Star</option>
-									<option>2 Stars</option>
-									<option>3 Stars</option>
-									<option>4 Stars</option>
-									<option>5 Stars</option>
-								</select>
-								<p>Maximum length of 500 characters</p>
-								<textarea ng-model="reviewCtrl.review.msg" minlength="15" maxlength="500" required></textarea>
-								<label>by:</label>
-								<input ng-model="reviewCtrl.review.author" type="email" name="email" required>
-								<input type="submit" value="Submit">
-								<p>Is form valid? {{reviewForm.$valid}}</p>
-							</div>
-								
-						</div>				
-					</form>
-				</section>				
-				<hr>				
+			<product-panels class="tab-panel"></product-panels>
+			<re-view></re-view>		
+			<hr>				
 			</div>			
+		</div>
+		<div class="row">
+			<temp-module></temp-module>
 		</div>
 	</div>
 
+	</body>
+
 	<script type="text/javascript" src="lib/angular/angular.min.js"></script>
 	<script type="text/javascript" src="app/app.js"></script>
-	<script type="text/javascript" src="app/modules/main.ctrl.js"></script>
-	<!-- <script type="text/javascript" src="app/modules/summary/main.dir.js"></script>	 -->
+	<script type="text/javascript" src="app/modules/summary/main.js"></script>
+	<script type="text/javascript" src="app/modules/panels/main.js"></script>
+	<script type="text/javascript" src="app/modules/reviews/main.js"></script>
+	<script type="text/javascript" src="app/modules/temp/main.js"></script>
 
-
-	<script type="text/javascript" src="lib/angular/angular.min.js"></script>
-		<script type="text/javascript" src="app/app.js"></script>
-	<script type="text/javascript" src="app/modules/main.ctrl.js"></script>
-
-</head>
 </html>

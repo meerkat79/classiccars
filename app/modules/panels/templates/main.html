@@ -1,0 +1,30 @@
+<section>
+	<ul>
+		<li ng-class="{ active: panel.isSelected(1) }">
+			<a href ng-click="panel.selectTab(1)">Description</a>
+		</li>
+		<li ng-class="{ active: panel.isSelected(2)  }">
+			<a href ng-click="panel.selectTab(2)">Specifications</a>
+		</li>
+		<li ng-class="{ active: panel.isSelected(3) }">
+			<a href ng-click="panel.selectTab(3)">Your views</a>
+		</li>										
+	</ul>				
+	<div class="panel" ng-show="panel.isSelected(1)">					
+		<p>{{car.description}}</p>					
+	</div>
+	<div class="panel" ng-show="panel.isSelected(2)">
+		
+		<p>{{car.specification}}</p>
+		
+	</div>
+	<div class="panel" ng-show="panel.isSelected(3)">
+		<blockquote ng-repeat="review in car.reviews">
+			<p><span>Rating</span> {{review.stars}} </p>
+			<p>{{review.msg}}</p>
+			<p>{{review.author}}</p>
+			<hr>
+		</blockquote>
+
+	</div>	
+</section>

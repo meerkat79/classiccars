@@ -1,0 +1,32 @@
+<form name="reviewForm" ng-submit="reviewForm.$valid && reviewCtrl.addReview(car)" novalidate>
+	<h2>Submit a review</h2>
+	</br>
+	<h3>Preview</h3>
+	<blockquote>
+		<b>Stars: {{reviewCtrl.review.stars}}</b>
+		<p>Write-up:{{reviewCtrl.review.msg}}</p>
+		<cite>by:{{reviewCtrl.review.author}}</cite>
+	</blockquote>
+	<hr>
+	<h3>Please enter review information below</h3>
+	</br>
+
+	<div class="row">
+		<div class="col-lg-12">
+		<p>Car out of 5, where 5 is best rating</p>
+			<select ng-model="reviewCtrl.review.stars" required>
+				<option>1 Star</option>
+				<option>2 Stars</option>
+				<option>3 Stars</option>
+				<option>4 Stars</option>
+				<option>5 Stars</option>
+			</select>
+			<p>Maximum length of 500 characters</p>
+			<textarea ng-model="reviewCtrl.review.msg" minlength="15" maxlength="500" required></textarea>
+			<label>by:</label>
+			<input ng-model="reviewCtrl.review.author" type="email" name="email" required>
+			<input type="submit" value="Submit">
+			<p>Is form valid? {{reviewForm.$valid}}</p>
+		</div>
+	</div>
+</form>
