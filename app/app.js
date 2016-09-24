@@ -1,5 +1,4 @@
 (function(){
-	console.info('welcome to the classic car app');
 
 	//The code pertaining to the app itself lives here
 	var app = angular.module('showroom', ['summary-showroom', 'product-panels', 'test-module', 're-view']);
@@ -13,6 +12,8 @@
 		$http.get('../data/data.json').success(function(data){
 			obj.cars = data;
 		});
+
+		console.info(obj);
 
 	}]);	
 })();

@@ -26,7 +26,8 @@
 			<label>by:</label>
 			<input ng-model="reviewCtrl.review.author" type="email" name="email" required>
 			<input type="submit" value="Submit">
-			<p>Is form valid? {{reviewForm.$valid}}</p>
+			<span ng-show="!reviewForm.email.$valid">Please enter an e-mail in this field</span>
+			<!-- <p>Is form valid? {{reviewForm.$valid}}</p> -->
 		</div>
 	</div>
 </form>
