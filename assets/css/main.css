@@ -5,8 +5,7 @@ header,body{
 header{
 	height: 11em;
 	text-align: center;
-	background: url('../img/banner.jpg') no-repeat;
-	background-size: 100%;
+	background: url('../img/banner.jpg') center/75% no-repeat;
 }
 
 header h1{
