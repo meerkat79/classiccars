@@ -9,7 +9,7 @@
 
 		obj.cars = [];
 
-		$http.get('../data/data.json').success(function(data){
+		$http.get('./data/data.json').success(function(data){
 			obj.cars = data;
 		});
 
